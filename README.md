@@ -13,7 +13,7 @@ Lucid is an intelligent journaling application that combines conversational AI w
 ## Tech Stack
 
 - **Frontend**: React with TypeScript, Tailwind CSS, and Shadcn UI components
-- **Backend**: Node.js with Express
+- **Backend**: FastAPI Python
 - **Database**: PostgreSQL for storing user data, messages, and journal entries
 - **AI Integration**: OpenAI API for generating responses and embeddings
 - **Vector Search**: For memory retrieval based on semantic similarity
@@ -22,7 +22,8 @@ Lucid is an intelligent journaling application that combines conversational AI w
 
 ### Prerequisites
 
-- Node.js (v18.x or later)
+- Python 3.9+
+- FastAPI
 - PostgreSQL database
 - OpenAI API key
 
@@ -42,7 +43,7 @@ Lucid is an intelligent journaling application that combines conversational AI w
 
    # Install backend dependencies
    cd ../server
-   npm install
+   pip install -r requirements.txt
    ```
 
 3. Set up environment variables
@@ -52,14 +53,14 @@ Lucid is an intelligent journaling application that combines conversational AI w
 4. Initialize the database
    ```
    cd server
-   npm run db:migrate
+   python -m scripts.db_init
    ```
 
 5. Start the development servers
    ```
    # Start backend server
    cd server
-   npm run dev
+   uvicorn main:app --reload
 
    # In a new terminal, start frontend
    cd client
@@ -69,9 +70,10 @@ Lucid is an intelligent journaling application that combines conversational AI w
 ## Project Structure
 
 - `/client` - React frontend application
-- `/server` - Node.js Express backend API
+- `/server` - FastAPI Python
 - `/docs` - Documentation and design assets
 
 ## License
 
-[Include your license information here]
+ GNU GENERAL PUBLIC LICENSE
+ Version 3, 29 June 2007
